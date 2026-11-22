@@ -84,7 +84,7 @@ address a:hover{color:var(--gold)}
 .catalogo-grupo + .catalogo-grupo{margin-top:2.8rem}
 .catalogo-grupo h3{margin-bottom:1.1rem}
 .catalogo-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem}
-.catalogo-item{display:flex;flex-direction:column;align-items:flex-start;gap:.85rem;padding:1.35rem;background:var(--paper);border:1px solid var(--line)}
+.catalogo-item{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);overflow:hidden}
 .catalogo-item h4{margin:0;font:400 1.55rem/1.12 Georgia,serif}
 .catalogo-item p{color:var(--muted);margin-bottom:auto}
 .whatsapp-flutuante{position:fixed;z-index:3;left:1rem;bottom:1rem;display:inline-flex;align-items:center;gap:.55rem;border-radius:2rem;background:#146143;color:#fff;min-height:48px;padding:.65rem 1rem;text-decoration:none;font-size:.94rem;font-weight:700;box-shadow:0 3px 14px #0003}
@@ -97,4 +97,16 @@ address a:hover{color:var(--gold)}
 @media(max-width:32rem){
   .topo{flex-wrap:wrap;padding-block:.85rem;gap:.7rem}
   nav{flex-basis:100%;gap:1.15rem;flex-wrap:wrap}
+}
+
+.catalogo-texto{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:.85rem;padding:1.35rem}
+.catalogo-foto{aspect-ratio:16/10}
+.catalogo-item:hover .catalogo-foto img{transform:scale(1.045)}
+.catalogo-destaque{grid-column:1/-1}
+.catalogo-destaque h4{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.045em}
+@media(min-width:48rem){
+  .catalogo-destaque{display:grid;grid-template-columns:1.5fr 1fr}
+  .catalogo-destaque .catalogo-texto{justify-content:center;padding:clamp(1.5rem,4vw,3.5rem)}
+  .catalogo-destaque .catalogo-texto p{margin-bottom:.4rem}
+  .catalogo-destaque .catalogo-foto{height:100%;aspect-ratio:1.85}
 }
